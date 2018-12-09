@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <!-- build:css assets/main.css -->
+    <link rel="stylesheet" href="reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/css/theme/blood.css" />
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css" />
+    <!-- endbuild -->
+    <style>
+      * {
+        font-family: sans-serif !important;
+      }
+      code {
+        font-family: monospace !important;
+      }
+      code * {
+        font-family: monospace !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        @@include('./slide1.html') @@include('./slide2.html')
+      </div>
+    </div>
+    <!-- build:js assets/main.js -->
+    <script src="headjs/dist/1.0.0/head.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <!-- endbuild -->
+    <script>
+      Reveal.initialize({
+        dependencies: [
+          {
+            src: 'reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad()
+            },
+          },
+        ],
+      })
+    </script>
+  </body>
+</html>
